@@ -1,0 +1,12 @@
+gas = scan(cosmo50gas45);
+stat = scan(cosmo50stat45); 
+
+filtereddark = select pid
+               from gas g, stat h
+               where (g.x-(h.Xc-12.5)/25)*(x-(h.Xc-12.5)/25) + 
+                     (g.y-(h.Yc-12.5)/25)*(y-(h.Yc-12.5)/25) + 
+                     (g.z-(h.Zc-12.5)/25)*(z-(h.Zc-12.5)/25) 
+                   <= (h.Rvir * h.Rvir)/6.25e8
+                and h.HaloID = 1;  -- cross product with size 1
+
+store(filtereddark, q2_cosmo50);

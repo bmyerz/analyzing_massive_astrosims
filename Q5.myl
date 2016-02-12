@@ -1,0 +1,10 @@
+gas45 = scan(cosmo50gas45);
+gas60 = scan(cosmo50gas60);
+r = select g1.iOrder 
+       from gas45 g1,
+            gas60 g2,
+    where g1.iOrder = g2.iOrder
+    and g1.metals = 0
+    and g2.metals > 0;
+store(r, q5)
+

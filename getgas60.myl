@@ -1,0 +1,3 @@
+x = scan(cosmo50gas);
+y = select * from x where snapshot = 60;
+store(y, cosmo50gas60);

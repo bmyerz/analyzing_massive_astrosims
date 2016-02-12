@@ -1,0 +1,13 @@
+gas = scan(cosmo50gas43);
+stat = scan(cosmo50stat43);
+
+filtereddark = select pid
+               from gas g, stat h
+               where (g.x-(h.Xc-12.5)/25)*(x-(h.Xc-12.5)/25) + 
+                     (g.y-(h.Yc-12.5)/25)*(y-(h.Yc-12.5)/25) + 
+                     (g.z-(h.Zc-12.5)/25)*(z-(h.Zc-12.5)/25) 
+                   <= (h.Rvir * h.Rvir)/6.25e8
+                and h.HaloID = 1   -- crossproduct with size 1
+                and g.temp > VirialTemp(h.Rvir, h.Mvir);
+
+store(filtereddark, q3_cosmo50);

@@ -1,0 +1,7 @@
+gas = scan(cosmo50gas43);
+
+filteredgas = select iOrder, temp 
+              from gas
+              where temp > 150000;
+
+store(filteredgas, q1_cosmo50);

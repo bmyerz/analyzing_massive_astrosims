@@ -1,0 +1,3 @@
+x = scan(cosmo50stat);
+y = select * from x where snapshot = 45;
+store(y, cosmo50stat45);

@@ -1,0 +1,23 @@
+@article{Loebman2009,
+abstract = {As the datasets used to fuel modern scientific discovery grow increasingly large, they become increasingly difficult to manage using conventional software. Parallel database management systems (DBMSs) and massive-scale data processing systems such as MapReduce hold promise to address this challenge. However, since these systems have not been expressly designed for scientific applications, their efficacy in this domain has not been thoroughly tested. In this paper, we study the performance of these engines in one specific domain: massive astrophysical simulations. We develop a use case that comprises five representative queries. We implement this use case in one distributed DBMS and in the Pig/Hadoop system. We compare the performance of the tools to each other and to hand-written IDL scripts. We find that certain representative analyses are easy to express in each engine's high level language and both systems provide competitive performance and improved scalability relative to current IDL-based methods.},
+annote = {simple astrophysics queries
+
+These are very simple compared to TPC-H. There is not even aggregation.
+
+Q1. select (intergalactic medium)
+Q2. select and distance (proximity)
+Q3. select and distance and UDF (shocked gas)
+Q4. self anti-join (star formation)
+     - which is also left outer join followed by select nulls
+Q5. self join then select (gas encountering metals)},
+author = {Loebman, Sarah and Nunley, Dylan and Kwon, Yong Chul and Howe, Bill and Balazinska, Magdalena and Gardner, Jeffrey P.},
+doi = {10.1109/CLUSTR.2009.5289149},
+file = {:Users/brandon/Documents/post{\_}generals{\_}lit/post-sim-apps/loebman-iasds09.pdf:pdf},
+isbn = {9781424450121},
+issn = {15525244},
+journal = {Proceedings - IEEE International Conference on Cluster Computing, ICCC},
+keywords = {radish applications},
+mendeley-tags = {radish applications},
+title = {{Analyzing massive astrophysical datasets: Can Pig/Hadoop or a relational DBMS help?}},
+year = {2009}
+}
